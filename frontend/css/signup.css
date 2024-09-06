@@ -1,0 +1,238 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    position: fixed;
+    background-color: #fff;
+    text-align: left;
+    margin-top: 0rem;
+    padding: 1rem 0;
+    z-index: 2;
+    width: 100%;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.fit {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    max-width: 280px;
+    margin-left: 2rem;
+}
+
+.org {
+    text-align: right;
+    margin-right: 5rem;
+    font-size: large;
+    color: #002244;
+    font-weight: bold;
+}
+
+.signup-banner {
+    text-align: center;
+    margin: 8rem 0 2rem 0;
+    background-color: #a21920;
+   
+}
+
+.signup-banner img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    margin-bottom: -1rem;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
+}
+.signup-banner h1{
+    color: white;
+    padding-top: 2rem;
+    margin-top: -2.5rem;
+   
+
+}
+.account-options {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 6rem;
+    margin-bottom: 6rem;
+    margin-right: 2rem;
+}
+
+.account-card {
+    background-color: #e9e3da;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    padding: 2rem;
+    width: 30%;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); 
+    text-align: center;
+    margin-right: 1.5rem;
+    height:100%;
+    margin-top: 3rem;
+}
+
+.account-card h2 {
+    font-size: 1.5rem;
+    color: #a21920;
+    margin-bottom: 1rem;
+    margin-top: 0rem;
+    padding-top: 1rem;
+}
+
+.account-card p {
+    font-size: 1rem;
+    color: #10033e;
+    margin-bottom: 1rem;
+    text-align: left;
+    padding-left: 1rem;
+}
+
+.account-button {
+    background-color: #002244;
+    color: #fff;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.account-button:hover {
+    background-color: #001122;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+.cardtop{
+    background-color: #b5b4b4;
+    margin-bottom: 4rem;
+    height: 60%;
+    padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        margin-left: -1.978rem;
+        margin-right: -2rem;
+        margin-top: -1.95rem;
+     box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.3); 
+}
+
+.account-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 6rem;
+}
+
+.account-card ul li {
+    margin: 3rem 0;
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 3; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+/* The Close Button */
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+/* The Close Button */
+.close-button,
+.close-button-advantage,
+.close-button-investment {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus,
+.close-button-advantage:hover,
+.close-button-advantage:focus,
+.close-button-investment:hover,
+.close-button-investment:focus{
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+footer {
+   
+    background-color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9em;
+    color: #777;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+    
+}
+
+

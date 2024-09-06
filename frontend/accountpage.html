@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Account</title>
+    <link rel="stylesheet" href="css/accountpage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+
+<body>
+    <div class="container">
+        <header class="fit">
+            <img src="images/logos2.png" alt="Bank Logo" class="logo">
+
+            <div class="user-info">
+                <p class="org">&copy; Emmanuel Adjei Danso</p>
+                <div class="account-dropdown">
+                    <button class="account-button">Account</button>
+                    <div class="dropdown-content">
+                        <a href="#" id="profile-link">Profile</a>
+                        <a href="/logout">Logout</a> <!-- Update this line -->
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        
+        <div class="main-content">
+            <aside class="sidebar">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="accountpage.html"><i class="fas fa-home"></i> HOME</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#"><i class="fas fa-university"></i> ACCOUNTS <i class="fas fa-caret-down"></i></a>
+                            <ul class="dropdown-menu">
+                                 <!-- <li><a href="#">★ Account Activity</a></li>  -->
+                                <li><a href="#" id="account-activity-link">★ Account Activity</a></li>
+
+                                <li><a href="#" id="monthly-statement-link">★ Monthly Statement</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#"><i class="fas fa-exchange-alt"></i> TRANSFERS <i
+                                    class="fas fa-caret-down"></i></a>
+                            <ul class="dropdown-menu">
+                            
+                                <li><a href="#" id="make-transfer-link">★ Make a Transfer</a></li>
+
+                                <!-- <li><a href="#">★ View All Transfers</a></li> -->
+
+                                <li><a href="#" id="view-transfers-link">★ View All Transfers</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#"><i class="fas fa-file-invoice-dollar"></i> BILLS <i
+                                    class="fas fa-caret-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <!-- <li><a href="#">★ Pay Bill</a></li> -->
+                                <li><a href="#" id="pay-bill-link">★ PAY BILL</a></li>
+
+                                 <li><a href="#" id="view-bills-link">★ View All Bills</a></li> 
+
+                            </ul>
+                        </li>
+                        <!-- <li><a href="#"><i class="fas fa-money-check-alt"></i> DEPOSIT MONEY</a></li> -->
+
+                        <li><a href="#" id="deposit-money-link"><i class="fas fa-money-check-alt"></i> DEPOSIT MONEY</a></li>
+
+                        <li><a href="#" id="sidebar-profile-link"><i class="fas fa-user-cog"></i> USER PROFILE</a></li>
+
+                        <!-- <li><a href="#"><i class="fas fa-shopping-cart"></i> SHOPPING</a></li> -->
+
+                        <li><a href="#" id="shopping-link"><i class="fas fa-shopping-cart"></i> SHOPPING</a></li>
+
+                    </ul>
+                </nav>
+            </aside>
+
+            <section class="account-overview" id="account-overview">
+                <div class="welcome-header">
+                    <h2>Welcome <span id="userFirstName">USER</span>!</h2>
+                    <h4>® BankofAdjeiDanso2024</h4>
+                </div>
+            
+                <div id="account-cards-container" class="account-cards">
+                    <!-- Account cards will be dynamically generated here -->
+                </div>
+            </section>
+
+
+            <!-- New profile section (initially hidden) -->
+            <section class="manage-profile" id="manage-profile" style="display: none;">
+                <div class="profile-header">
+                <h2>User Profile</h2>
+                </div>
+
+                <form>
+                    <div class="form-group" id="un">
+                        <label for="username">Username :</label>
+                        <input type="text" id="username" name="username" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password :</label>
+                        <input type="password" id="password" name="password" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="fullName">Fullname :</label>
+                        <input type="text" id="fullName" name="fullName" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address :</label>
+                        <input type="text" id="address" name="address" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City :</label>
+                        <input type="text" id="city" name="city" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State :</label>
+                        <input type="text" id="state" name="state" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="zip">Zip :</label>
+                        <input type="text" id="zip" name="zip" readonly>
+                    </div>
+                </form>
+            </section>
+            <section class="make-transfer" id="make-transfer" style="display: none;">
+                <div class="transfer-header">
+                    <h2>Transfer Money</h2>
+                </div>
+            
+                <p>You may transfer money between your own accounts electronically below.</p>
+                <form id="transfer-form">
+                    <div class="form-group">
+                        <label for="payment-frequency">PAYMENT FREQUENCY *</label>
+                        <select id="payment-frequency" name="payment-frequency" required>
+                            <option value="" disabled selected>Select Frequency</option>
+                            <option value="single">Single</option>
+                            <option value="monthly">Monthly</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="transfer-from">Transfer From *</label>
+                        <select id="transfer-from" name="transfer-from" required>
+                            <!-- Options will be dynamically populated -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="transfer-to">Transfer To *</label>
+                        <select id="transfer-to" name="transfer-to" required>
+                            <!-- Options will be dynamically populated -->
+                        </select>
+                    </div>
+                    <div class="form-group" id="amount">
+                        <label for="amount">Amount ($) *</label>
+                        <input type="number" id="trans-amount" name="amount" placeholder="Enter amount" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="payment-date">Payment Date *</label>
+                        <input type="date" id="payment-date" name="payment-date" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-save">Save</button>
+                        <button id="cancel-transfer" type="button" class="btn-cancel" onclick="cancelTransfer()">Cancel</button>
+                    </div>
+                    <div class="notierror">
+                        <p id="notierror">Please we are currently experiencing notification 🔔 display issues. So after you click 👆 on
+                            <span style="color: #002244; font-weight: bold;font-style: normal">SAVE</span>, go to <span
+                                style="color:  #a21920;font-weight: bold;font-style: normal">"Account Activity"</span> section under <span
+                                style="color: #002244;font-weight: bold; font-style: normal;">"ACCOUNTS"</span> to confirm <span
+                                style="color:  #0c7a4c;font-weight: bold;">the success state of your action.</span> We are working to get
+                            this issue resolved quickly! Thank you for patience! </p>
+                    </div>
+                </form>
+            </section>
+
+
+<section class="deposit-money" id="deposit-money" style="display: none;">
+    <div class="deposit-header">
+        <h2>Deposit Funds</h2>
+    </div>
+    <p>You may deposit money below.</p>
+    <form id="deposit-form">
+        <div class="form-group">
+            <label for="deposit-to">To *</label>
+            <select id="deposit-to" name="deposit-to" required>
+                <!-- Options will be dynamically populated -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="deposit-amount">Amount ($) *</label>
+            <input type="number" id="deposit-amount" name="deposit-amount" min="1" step="0.01" required>
+        </div>
+           
+
+        <div class="form-group">
+            <label for="payment-date">Payment Date *</label>
+            <input type="date" id="payment-date" name="payment-date" required>
+     
+        </div>
+        
+        <div class="form-actions">
+            <button type="submit" class="btn-submit">Submit</button>
+            <button id="cancel-deposit" type="button" class="btn-cancel" onclick="cancelDeposit()">Cancel</button>
+        </div>
+
+        <div class="notierror">
+            <p id="notierror">Please we are currently experiencing notification 🔔 display issues. So after you click 👆 on <span style="color: #002244; font-weight: bold;font-style: normal">SUBMIT</span>, go to <span style="color:  #a21920;font-weight: bold;font-style: normal">"Account Activity"</span> section under <span style="color: #002244;font-weight: bold; font-style: normal;">"ACCOUNTS"</span> to confirm <span style="color:  #0c7a4c;font-weight: bold;">the success state of your action.</span>  We are working to get this issue resolved quickly! Thank you for patience! </p>
+        </div>
+
+
+    </form>
+</section>
+
+<section class="shopping-section" id="shopping-section" style="display: none;">
+    <div class="shopping-header">
+        <h2>Shopping</h2>
+    </div>
+    <form id="shopping-form">
+        <div class="shopping-category">
+            <h3><i class="fas fa-utensils"></i> Dining</h3>
+            <label><input type="checkbox"> Smoothie Boost <span>$6.50</span></label>
+            <label><input type="checkbox"> Cafecito <span>$2.75</span></label>
+            <label><input type="checkbox"> Sit & Eat <span>$18.50</span></label>
+        </div>
+        <div class="shopping-category">
+            <h3><i class="fas fa-store"></i> Retail</h3>
+            <label><input type="checkbox"> Glam Beauty <span>$5.50</span></label>
+            <label><input type="checkbox"> Supplies For All <span>$14.00</span></label>
+            <label><input type="checkbox"> Cool Clothes Co. <span>$37.99</span></label>
+            <label><input type="checkbox"> Outdoor Sports <span>$27.99</span></label>
+        </div>
+        <div class="shopping-category">
+            <h3><i class="fas fa-gas-pump"></i> Gas</h3>
+            <label><input type="checkbox"> Tank Fill 66 <span>$45.00</span></label>
+        </div>
+        <div class="shopping-category">
+            <h3><i class="fas fa-concierge-bell"></i> Service</h3>
+            <label><input type="checkbox"> Salon Styles <span>$17.00</span></label>
+        </div>
+        <div class="shopping-category">
+            <h3><i class="fas fa-shopping-basket"></i> Groceries</h3>
+            <label><input type="checkbox"> Smart Mart Grocery <span>$15.00</span></label>
+            <label><input type="checkbox"> Corner Deli 24/7 <span>$4.50</span></label>
+        </div>
+        <div class="shopping-category">
+            <h3><i class="fas fa-gamepad"></i> Media</h3>
+            <label><input type="checkbox"> GameBlox <span>$15.50</span></label>
+            <label><input type="checkbox"> Apps And In Apps <span>$1.99</span></label>
+        </div>
+        <div class="shopping-category">
+            <h3><i class="fas fa-money-check-alt"></i> ATM</h3>
+            <label><input type="checkbox"> ATM Withdrawal <span>$20.00</span></label>
+            <label><input type="checkbox"> Peer to Peer Transfer to Friend <span>$15.00</span></label>
+        </div>
+        <div class="shopping-form-actions">
+            <button id="cancel-shopping" type="button" class="btn-cancel" onclick="cancelShopping()">Cancel</button>
+            <button type="submit" class="btn-save">Save</button>
+        </div>
+    </form>
+    <div class="notierror">
+        <p id="notierror">Please we are currently experiencing notification 🔔 display issues. So after you click 👆 on
+            <span style="color: #002244; font-weight: bold;font-style: normal">SAVE</span>, go to <span
+                style="color:  #a21920;font-weight: bold;font-style: normal">"Account Activity"</span> section under <span
+                style="color: #002244;font-weight: bold; font-style: normal;">"ACCOUNTS"</span> to confirm <span
+                style="color:  #0c7a4c;font-weight: bold;">the success state of your action.</span> We are working to get
+            this issue resolved quickly! Thank you for patience!
+        </p>
+    </div>
+    
+</section>
+
+<section class="pay-bill" id="pay-bill" style="display: none;">
+    <div class="bill-header">
+        <h2>Pay a Bill</h2>
+    </div>
+    <p>By paying a bill below, the bank will be using the information to pay the chosen recipient directly.</p>
+    <form id="bill-form">
+        <div class="form-group">
+            <label for="pay-from">Pay From *</label>
+            <select id="pay-from" name="pay-from" required>
+                <!-- Options will be dynamically populated -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="payment-frequency">Payment Frequency *</label>
+            <select id="payment-frequency" name="payment-frequency" required>
+                <option value="single">Single</option>
+                <option value="monthly">Monthly</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="recipient">Recipient *</label>
+            <select id="recipient" name="recipient" required>
+                <!-- This will be populated after the Add Recipient function -->
+            </select>
+            <a href="#" id="add-recipient-link">+ ADD RECIPIENT</a>
+        </div>
+        <div class="form-group">
+            <label for="payment-date">Payment Date *</label>
+            <input type="date" id="payment-date" name="payment-date" required>
+        </div>
+        <div class="form-group">
+            <label for="bill-amount">Amount ($) *</label>
+            <input type="number" id="bill-amount" name="bill-amount" min="1" step="0.01" required>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn-submit">Submit</button>
+            <button id="cancel-bill" type="button" class="btn-cancel" onclick="cancelBill()">Cancel</button>
+        </div>
+
+        <div class="notierror">
+            <p id="notierror">Please we are currently experiencing notification 🔔 display issues. So after you click 👆 on
+                <span style="color: #002244; font-weight: bold;font-style: normal">SUBMIT</span>, go to <span
+                    style="color:  #a21920;font-weight: bold;font-style: normal">"Account Activity"</span> section under <span
+                    style="color: #002244;font-weight: bold; font-style: normal;">"ACCOUNTS"</span> to confirm <span
+                    style="color:  #0c7a4c;font-weight: bold;">the success state of your action.</span> We are working to get
+                this issue resolved quickly! Thank you for patience! </p>
+        </div>
+    </form>
+
+    <div id="add-recipient-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-recipient-modal">&times;</span>
+            <h2>Add Recipient</h2>
+            <form id="recipient-form">
+                <div class="form-group">
+                    <label for="recipient-name">Recipient Name *</label>
+                    <input type="text" id="recipient-name" name="recipient-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="recipient-address">Address *</label>
+                    <input type="text" id="recipient-address" name="recipient-address" required>
+                </div>
+                <div class="form-group">
+                    <label for="recipient-city">City *</label>
+                    <input type="text" id="recipient-city" name="recipient-city" required>
+                </div>
+                <div class="form-group">
+                    <label for="recipient-state">State *</label>
+                    <input type="text" id="recipient-state" name="recipient-state" required>
+                </div>
+                <div class="form-group">
+                    <label for="recipient-zip">ZIP *</label>
+                    <input type="text" id="recipient-zip" name="recipient-zip" required>
+                </div>
+                <button type="submit" class="btn-submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- Add this section to your accountpage.html -->
+<section class="monthly-statement" id="monthly-statement" style="display: none;">
+            <div class="monthly-statement-header">
+                <h2>Monthly Statement</h2>
+            </div>
+            
+            <p>Account statements are available on the 3rd day after the end of the month.</p>
+
+            <div id="account-type-buttons">
+                <!-- Buttons for account types will be dynamically added here -->
+            </div>
+
+            <div id="statement-display">
+                <!-- Statements or a message will be displayed here -->
+                <p>No statements have been generated yet! Feel free to check back next month.</p>
+            </div>
+</section>
+
+    <section class="view-transfers" id="view-transfers" style="display: none;">
+        <div class="transfers-header">
+            <h2>Transfers</h2>
+        </div>
+    
+        <p>Select the account you want to view transfers for:</p>
+    
+        <div id="account-buttons" class="account-buttons">
+            <!-- Account buttons will be dynamically populated here -->
+        </div>
+    
+        <div class="table-container">
+            <div id="transfers-table-container">
+                <table id="transfers-table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Date</th>
+                            <th>Description</th>
+                            <th>Amount</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Transfer records will be dynamically populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Account Activity Section -->
+    <section class="account-activity" id="account-activity" style="display: none;">
+        <div class="activity-header">
+            <h2>Account Activity</h2>
+            <a href="#" id="view-account-routing-link">View Account/Routing Numbers</a>
+        </div>
+    
+        <p>Select the account you want to view activity for:</p>
+    
+        <div id="account-buttons" class="account-buttons">
+            <!-- Static buttons -->
+            <button id="checking-button" class="account-button">Checking</button>
+            <button id="savings-button" class="account-button">Savings</button>
+            <button id="money-market-button" class="account-button">Money Market</button>
+        </div>
+    
+
+        <div class="table-container">
+            <table id="activity-table" style="display: none;"> <!-- Initially hidden -->
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Balance</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Account activity rows will be dynamically generated here -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Account/Routing Numbers Modal -->
+    <div id="account-routing-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-account-routing-modal">&times;</span>
+            <h2>Account and Routing Numbers</h2>
+            <p id="account-routing-info"></p>
+        </div>
+    </div>
+
+
+    <section class="view-bills" id="view-bills" style="display: none;">
+        
+        <div class="bills-header">
+            <h2>Bills</h2>
+        </div>
+    
+        <p>Select the account you want to view bills for:</p>
+    
+        <div id="account-buttons-bills" class="account-buttons">
+            <!-- Account buttons will be dynamically populated here -->
+        </div>
+    
+        <div class="table-container">
+        <div id="bills-table-container">
+            <table id="bills-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Bill records will be dynamically populated here -->
+                </tbody>
+            </table>
+        </div>
+
+        </div>
+    </section>
+
+
+</div>
+
+
+<div>
+        <footer class="footer">
+            <p>© 2024 Online Banking Corporation. All rights reserved.</p>
+        </footer>
+    
+</div>
+
+    <script>
+        window.onload = function () {
+            fetch('/getUserFirstName')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.firstName) {
+                        document.getElementById('userFirstName').innerText = data.firstName.toUpperCase();
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        };
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+                const buttons = document.querySelectorAll('.account-buttons .account-button');
+
+                buttons.forEach(button => {
+                    button.addEventListener('click', function () {
+                        // Remove the active class from all buttons
+                        buttons.forEach(btn => btn.classList.remove('active'));
+
+                        // Add the active class to the clicked button
+                        this.classList.add('active');
+                    });
+                });
+            });
+
+
+    </script>
+    <script src="js/toggle.js"></script>
+
+</body>
+
+</html>

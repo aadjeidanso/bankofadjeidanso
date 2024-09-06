@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Online Banking</title>
+    <link rel="stylesheet" href="css/signup.css">
+</head>
+
+<body>
+    <header class="fit">
+        <img src="images/logos2.png" alt="Bank Logo" class="logo">
+        <p class="org">&copy; Emmanuel Adjei Danso</p>
+    </header>
+
+    <main>
+        <section class="signup-banner">
+            <h1>Open An Account With Us And You'll Never Regret This Decision You've Made!</h1>
+            <img src="images/signup-banner.jpg" alt="Sign Up Banner">
+        </section>
+
+        <section class="account-options">
+            <div class="account-card">
+               <div class="cardtop">
+                <h2>SafeBalance Banking®</h2>
+                <p>SIMPLE BANKING</p>
+                <p>Simple banking with an easy-to-use experience.</p>
+                <a href="signupformchecking.html"><button class="account-button">Open Checking Account</button></a>
+                </div>
+
+                <ul>
+                    <li>★ Minimum account opening $25</li>
+                    <li>★ $4.95 or $0 monthly maintenance fee <a href="#" id="learn-more-link">Learn more</a></li>
+                    <li>★ Spend only the money you have — no overdraft fees</li>
+                    <li>★ No interest earned</li>
+                </ul>
+            </div>
+
+                <div id="popup-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-button">&times;</span>
+                        <h2>Bank of Adjei Danso SafeBalance Banking®</h2>
+                        <p>We'll waive the $4.95 monthly maintenance fee for each statement cycle when you meet one of the following:
+                        </p>
+                        <ul>
+                            <li>An owner of this account is under the age of 25*</li>
+                            <br>
+                            <ul>-------------------------------------------OR----------------------------------------------</ul>
+                            <br>
+                            <li>Maintain a minimum daily balance of $500 in your account</li>
+                            <br>
+                            <ul>-------------------------------------------OR----------------------------------------------</ul>
+                            <br>
+                            <li>Are a member in our Preferred Rewards program</li>
+                        </ul>
+                        <p>*Fiduciary titled accounts, including UTMA/UGMA, do not qualify for the under the age of 25 requirement to
+                            waive the monthly maintenance fee. Please refer to your <a href="#">Personal Schedule of Fees</a> for more
+                            information.</p>
+                    </div>
+                </div>
+
+
+
+
+
+            <div class="account-card">
+                <div class="cardtop">
+                <h2>Advantage Plus Banking®</h2>
+                <p>FLEXIBLE BANKING</p>
+                <p>Flexible banking to meet your needs.</p>
+                
+                <a href="signupformsavings.html"><button class="account-button">Open Savings Account</button></a>
+
+                </div>
+                <ul>
+                    <li>★ Minimum account opening $50</li>
+                    <li>★ $12 or $0 monthly maintenance fee <a href="#" id="learn-more-link-advantage">Learn more</a></li>
+                    <li>★ Set up Balance Connect® for overdraft protection</li>
+                    <li>★ No interest earned</li>
+                </ul>
+            </div>
+
+                    <div id="popup-modal-advantage" class="modal">
+                        <div class="modal-content">
+                            <span class="close-button-advantage">&times;</span>
+                            <h2>Bank of Adjei Danso Advantage Plus Banking®</h2>
+                            <p>We'll waive the $12 monthly maintenance fee each statement cycle when you meet one of the following:</p>
+                            <ul>
+                                <li>Have at least one qualifying direct deposit of $250 or more</li>
+                                <br>
+                                <ul>-------------------------------------------OR----------------------------------------------</ul>
+                                <br>
+                                <li>Maintain a minimum daily balance of $1,500 in your account</li>
+                                <br>
+                                <ul>-------------------------------------------OR----------------------------------------------</ul>
+                                <br>
+                                <li>Are a member in our Preferred Rewards program</li>
+                            </ul>
+                        </div>
+                    </div>
+
+            <div class="account-card">
+                <div class="cardtop">
+                <h2>Investment Banking®</h2>
+                <p>COMPREHENSIVE BANKING</p>
+                <p>Comprehensive banking to meet your needs.</p>
+                
+                <a href="signupform-mm.html"><button class="account-button">Open Money-Market Account</button></a>
+            </div>
+
+                <ul>
+                    <li> ★Minimum account opening $150</li>
+                    <li>★ $25 or $0 monthly maintenance fee <a href="#" id="learn-more-link-investment">Learn more</a></li>
+                    <li>★ Set up Balance Connect® for overdraft protection</li>
+                    <li>★ Earns interest <a href="#">(See rates)</a></li>
+                </ul>
+            </div>
+
+
+                <!-- Modal for Investment Banking -->
+                <div id="popup-modal-investment" class="modal">
+                    <div class="modal-content">
+                        <span class="close-button-investment">&times;</span>
+                        <h2>Bank of Adjei Danso Investment Banking®</h2>
+                        <p>We'll waive the $25 monthly maintenance fee each statement cycle when you meet one of the following:</p>
+                        <ul>
+                            <li>Maintain a minimum daily balance of $20,000 in your account</li>
+                            <br>
+                            <ul>-------------------------------------------OR----------------------------------------------</ul>
+                            <br>
+                            <li>Are a member in our Preferred Rewards program</li>
+                        </ul>
+                    </div>
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Online Banking Corporation. All rights reserved.</p>
+    </footer>
+
+<script>
+    // SafeBalance modal
+    var modal = document.getElementById("popup-modal");
+    var learnMoreLink = document.getElementById("learn-more-link");
+    var closeButton = document.getElementsByClassName("close-button")[0];
+
+    learnMoreLink.onclick = function (event) {
+        event.preventDefault();
+        modal.style.display = "block";
+    }
+
+    closeButton.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // Advantage Plus modal
+    var modalAdvantage = document.getElementById("popup-modal-advantage");
+    var learnMoreLinkAdvantage = document.getElementById("learn-more-link-advantage");
+    var closeButtonAdvantage = document.getElementsByClassName("close-button-advantage")[0];
+
+    learnMoreLinkAdvantage.onclick = function (event) {
+        event.preventDefault();
+        modalAdvantage.style.display = "block";
+    }
+
+    closeButtonAdvantage.onclick = function () {
+        modalAdvantage.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+        if (event.target == modalAdvantage) {
+            modalAdvantage.style.display = "none";
+        }
+    }
+
+
+    // Investment Banking modal
+        var modalInvestment = document.getElementById("popup-modal-investment");
+        var learnMoreLinkInvestment = document.getElementById("learn-more-link-investment");
+        var closeButtonInvestment = document.getElementsByClassName("close-button-investment")[0];
+
+        learnMoreLinkInvestment.onclick = function (event) {
+            event.preventDefault();
+            modalInvestment.style.display = "block";
+        }
+
+        closeButtonInvestment.onclick = function () {
+            modalInvestment.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modalInvestment) {
+                modalInvestment.style.display = "none";
+            }
+        }
+
+</script>
+
+
+
+
+</body>
+
+</html>

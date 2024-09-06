@@ -1,0 +1,166 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+
+}
+
+header {
+    position: fixed;
+    background-color: #fff;
+    text-align: left;
+    margin-top: 0rem;
+    padding: 1rem 0;
+    z-index: 2;
+    width: 100%;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+
+}
+
+.fit {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    max-width: 280px;
+    margin-left: 2rem;
+
+}
+
+.org {
+    text-align: right;
+    margin-right: 5rem;
+    font-size: large;
+    color: #002244;
+    font-weight: bold;
+
+
+}
+
+.cashback-banner {
+
+    background-color: #fff;
+    padding: 20px 30px;
+    margin: 20px;
+    margin-top: 10rem;
+    margin-left: 7rem;
+    margin-right: 7rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cashback-banner h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.cashback-banner p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.cashback-banner .see-more {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #5a00ff;
+    text-decoration: none;
+}
+
+.cashback-banner .see-more:hover {
+    text-decoration: underline;
+}
+
+.featured-stores{
+        margin-top: 4rem;
+        margin-left: 7rem;
+        margin-right: 7rem;
+        margin-bottom: 5rem;
+}
+
+.store-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+}
+
+.store-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.store-card img {
+    width: 60px;
+    /* Adjust the width as needed */
+    height: auto;
+    margin-bottom: 10px;
+    object-fit: contain;
+}
+.cashback-was {
+    font-size: 0.85rem;
+    color: #999;
+}
+
+.cashback-amount {
+    font-size: 1.2rem;
+    color: #ff0000;
+    margin: 10px 0;
+}
+
+.cashback-details {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.discover-more {
+    background-color:#a21920;
+    color: #fff;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+ 
+}
+
+.discover-more h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.discover-more p {
+    font-size: 1rem;
+}
+
+.join-now-button {
+    display: inline-block;
+    background-color: #fff;
+    color:#a21920;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.join-now-button:hover {
+    background-color: #e0e0e0;
+}
+
+.member-signin a {
+    color: #fff;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.member-signin a:hover {
+    text-decoration: underline;
+}

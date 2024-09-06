@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+
+}
+
+header {
+    position: fixed;
+    background-color: #fff;
+    text-align: left;
+    margin-top: 0rem;
+    padding: 1rem 0;
+    z-index: 2;
+    width: 100%;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+
+}
+
+.fit {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    max-width: 280px;
+    margin-left: 2rem;
+
+}
+
+.org {
+    text-align: right;
+    margin-right: 5rem;
+    font-size: large;
+    color: #002244;
+    font-weight: bold;
+
+
+}
+
+
+/* Style the banner section */
+.privacy-banner {
+    position: relative;
+    text-align: center;
+    color: white;
+    margin-bottom:20px;
+    /* Adjust spacing between banners */
+}
+.privacy-bannerii {
+    position: relative;
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+    /* Adjust spacing between banners */
+}
+
+.privacy-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 5rem;
+    /* Adjust margin if needed */
+}
+.privacy-bannerii img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: -1.5rem;
+    /* Adjust margin if needed */
+}
+/* Style for the text overlay on the first banner */
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    /* Adjust the font size as needed */
+    font-weight: bold;
+    color: white;
+    /* Text color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    /* Optional shadow for better visibility */
+}
+
+/* Style for the text overlay on the second banner */
+.banner-text-second {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    /* Adjust the font size as needed */
+    font-weight: bold;
+    color: rgb(192, 10, 10);
+    /* Text color */
+}
+
+.small-text {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+/* Style the text section */
+.privacy-text-section {
+    padding: 2rem 5rem;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+.privacy-text-section h3 {
+    font-size: 1.25rem;
+    margin-top: 2rem;
+}
+
+.privacy-text-section ul {
+    list-style-type: disc;
+    margin-left: 2rem;
+}
+
+.privacy-text-section p {
+    margin-bottom: 1.5rem;
+}
+
+.privacy-text-section a {
+    color: #0074cc;
+    text-decoration: none;
+}
+
+.privacy-text-section a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application | Bank of Adjei Danso Money-Market Account®</title>
+    <link rel="stylesheet" href="css/signupform-mm.css">
+</head>
+
+<body>
+    <header class="fit">
+        <img src="images/logos2.png" alt="Bank Logo" class="logo">
+        <p class="org">&copy; Emmanuel Adjei Danso</p>
+    </header>
+
+    <main>
+        <section class="application-section">
+            <div class="application-header">
+                <h1>Application | Bank of Adjei Danso Money-Market Account ®</h1>
+                <p class="call-info">CALL: 908-590-0285</p>
+            </div>
+            <p class="subheading">Your Information</p>
+            <p class="welcome-message">Welcome. Apply in just minutes.</p>
+            <hr>
+
+            <form action="/submit_form" method="post" id="main-form" enctype="multipart/form-data">
+                <!-- Personal Information -->
+                <h3 id="personal">Personal</h3>
+                <div class="form-group">
+                    <label for="first-name">First name:</label>
+                    <input type="text" id="first-name" name="firstName" required>
+
+                    <label for="middle-name">Middle name:</label>
+                    <input type="text" id="middle-name" name="middleName">
+
+                    <label for="last-name">Last name:</label>
+                    <input type="text" id="last-name" name="lastName" required>
+                </div>
+
+                <div class="form-group-full">
+                    <label for="dob">Date of birth (MM/DD/YYYY):</label>
+                    <input type="text" id="dob" name="dob" required>
+                </div>
+
+                <!-- Contact Information -->
+                <h3 id="contact-info">Contact info</h3>
+                <div class="form-group">
+                    <label for="address-line">Address Line:</label>
+                    <input type="text" id="address-line" name="addressLine" required>
+
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" required>
+
+                    <label for="state">State:</label>
+                    <input type="text" id="state" name="state" required>
+
+                    <label for="zip-code">ZIP code:</label>
+                    <input type="text" id="zip-code" name="zipCode" required>
+
+                    <label for="county">County:</label>
+                    <input type="text" id="county" name="county">
+                </div>
+
+                <div class="form-group-full">
+                    <div class="secure-info">
+                        <i class="info-icon">ℹ️</i>
+                        <p id="sec">Keeping your account secure</p>
+                        <p>(we may verify your phone number and email before you submit your application).</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone-number">Phone number:</label>
+                    <input type="text" id="phone-number" name="phoneNumber" required>
+
+                    <label for="email-address">Email address:</label>
+                    <input type="email" id="email-address" name="emailAddress" required>
+
+                    <label for="ssn">Social Security#:</label>
+                    <input type="text" id="ssn" name="ssn" required>
+                </div>
+
+                <!-- Employment & Finances -->
+                <h3 id="employment-finances">Employment & finances</h3>
+                <div class="form-group">
+                    <label for="employment-status">Employment Status *</label>
+                    <select id="employment-status" name="employmentStatus" required>
+                        <option value="" disabled selected>Select your employment status</option>
+                        <option value="employed">Employed</option>
+                        <option value="self-employed">Self-Employed</option>
+                        <option value="unemployed">Unemployed</option>
+                        <option value="student">Student</option>
+                    </select>
+
+                    <label for="source-of-income">Source of income *</label>
+                    <select id="source-of-income" name="sourceOfIncome" required>
+                        <option value="" disabled selected>Select your source of income</option>
+                        <option value="salary">Salary</option>
+                        <option value="business">Business</option>
+                        <option value="investment">Investment</option>
+                        <option value="others">Others</option>
+                    </select>
+                </div>
+
+                <!-- Create Username & Password -->
+                <h3 id="create-username-password">Create Username & Password</h3>
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                    <small>(must contain alphanumeric characters. e.g: arabat34)</small>
+
+                    <br>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    <small>(must contain alphanumeric characters. e.g: Ara_baT#@34)</small>
+                </div>
+
+                <!-- First Deposit -->
+                <h3 id="firstdeposit">Pay First Deposit</h3>
+                <div class="form-group-full">
+                    <label for="fd">Deposit Amount ($):</label>
+                    <input type="text" id="fd" name="firstDeposit" required>
+                </div>
+                <small>(make your payment at the counter)</small>
+
+            <!-- Confirmation section -->
+                <div class="confirm">
+                    <h3 id="confirmation">Confirmation</h3>
+                    <label class="confirmbtns">
+                        <input type="radio" name="accountType" value="savings-ch" id="savings-ch-radio">I'd like to
+                        include Savings Account / Checking Account
+                    </label>
+                    <br>
+                    <label class="confirmbtns">
+                        <input type="radio" name="accountType" value="both" id="both-radio">I'd like to include both
+                        Savings Account & Checking Account
+                    </label>
+                    <br>
+                    
+                </div>
+                <h5>*****YOUR DEFAULT ACCOUNT IS MONEY-MARKET ACCOUNT</h5>
+
+                <div class="form-group-full">
+                    <button type="submit" id="create-account-btn" class="create-account-button">Create Account</button>
+                </div>
+
+                <!-- Notification div to display success or error messages -->
+                <div id="notification" style="display: none; text-align: center; margin-bottom: 20px;"></div>
+
+                <!--Pop-Up Box for Savings / Checking Accounts -->
+                <div id="popup-box" class="popup-box">
+                    <div class="popup-content">
+                        <h3>SELECT ACCOUNT TO INCLUDE</h3>
+                        <label for="account-type">Account Type:</label>
+                        <select id="account-type">
+                            <option value="" disabled selected>Select account type</option>
+                            <option value="savings">Savings Account</option>
+                            <option value="checking">Checking Account</option>
+                        </select>
+
+                        <label for="first-deposit">First Deposit ($):</label>
+                        <input type="text" id="first-deposit">
+
+                        <button type="button" class="add-button" id="add-single-account">ADD</button>
+                    </div>
+                </div>
+
+                <!-- Pop-Up Box for both Savings & Checking Accounts -->
+                <div id="popup-box-both" class="popup-box">
+                    <div class="popup-content">
+                        <h3>SELECT ACCOUNT(S) TO INCLUDE</h3>
+                        <label for="account-type1">Account Type1:</label>
+                        <select id="account-type1">
+                            <option value="" disabled selected>Select account type</option>
+                            <option value="savings">Savings Account</option>
+                            <option value="checking">Checking Account</option>
+                        </select>
+
+                        <label for="first-deposit1">First Deposit ($):</label>
+                        <input type="text" id="first-deposit1">
+
+                        <hr>
+
+                        <label for="account-type2">Account Type2:</label>
+                        <select id="account-type2">
+                            <option value="" disabled selected>Select account type</option>
+                            <option value="savings">Savings Account</option>
+                            <option value="checking">Checking Account</option>
+                        </select>
+
+                        <label for="first-deposit2">First Deposit ($):</label>
+                        <input type="text" id="first-deposit2">
+
+                        <button type="button" class="add-button" id="add-both-accounts">ADD</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Online Banking Corporation. All rights reserved.</p>
+    </footer>
+
+    <script src="js/scriptsmm.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Banking Welcome</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <header class="fit">
+        <img src="images/logos2.png" alt="Bank Logo" class="logo">
+        <p class="org">&copy; Emmanuel Adjei Danso</p>
+
+    </header>
+    <main>
+    <div class="maindiv">
+        <div class="hero-section">
+            <div class="hero-text">
+                <h1>Our award-winning <span class="highlight">Online Banking</span> makes banking simple, secure, and
+                    convenient.</h1>
+            </div>
+            <div class="features">
+                <h2>Features & Services</h2>
+                <ul>
+                    <li>★ Alerts</li>
+                    <li>★ Accounts Overview</li>
+                    <li>★ Bills Payment</li>
+                    <li>★ Tools & Investing</li>
+                    <li>★ Transfers</li>
+                    <li>★ Mobile Banking</li>
+                    <li>★ Help & Support</li>
+                    <li>★ Profile & Settings</li>
+                    <li>★ Secured Banking</li>
+                </ul>
+            </div>
+        </div>
+        <div class="actions">
+            <div class="action-item">
+                <h3>Create an Account with Us</h3>
+                <p>It is super-simple, safe and smooth.</p>
+                <a href="signup.html"><button class="action-button">Sign Up</button></a>
+            </div>
+            <div class="action-item">
+                <h3>Start With Sign-in</h3>
+                <p>To Sign in click the button below.</p>
+                <a href="signin.html"><button class="action-button">Sign In</button></a>
+            </div>
+        </div>
+    </div>
+        
+         <div class="offer-section">
+            <div class="offer-text">
+                <p class="offer-title">CHECKING ACCOUNT OFFER</p>
+                <h2>You could get <span class="highlight">$200</span></h2>
+                <p>Start by opening a new eligible checking account online by clicking on our sign up button on this page. You’re in the right place to explore your checking options.</p>
+            </div>
+            <div class="offer-image">
+                <img src="images/checking-offer-card.png" alt="Bank Offer Card">
+            </div>
+        </div>
+
+
+
+            <div class="benefits-section">
+                <div class="benefits-banner">
+                    <img src="images/growmoney.jpg" alt="Grow your money">
+                </div>
+                <div class="benefits-cards">
+                    <div class="card">
+                        <div class="card-icon">
+                            <img src="images/interest.png" alt="Earn interest">
+                        </div>
+                        <div class="card-content">
+                            <h3>Earn interest and grow your money!</h3>
+                            <p>Watch your balance grow steadily over time, helping you reach your financial goals sooner!</p>
+                            <a href="growmoney.html"><button class="card-button">See more</button></a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">
+                            <img src="images/cashback.png" alt="Earn cash back">
+                        </div>
+                        <div class="card-content">
+                            <h3>Earn cash back!</h3>
+                            <p>Automatically earn cash back on debit card purchases from merchants you know and love at 40,000+ online locations and 12,000+ local locations.</p>
+                            <a href="cashback.html"><button class="card-button">See Offers</button></a>
+                        </div>
+                    </div>
+
+                  
+                </div>
+            </div>
+
+                <div class="meet-ceo">
+                    <a href="#">MEET OUR CEO</a>
+                </div>
+
+
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Online Banking Corporation. All rights reserved.</p>
+    </footer>
+
+    
+
+<!-- CEO Pop-up Modal -->
+<div id="ceo-modal" class="ceo-modal-content">
+    <div class="ceo-image">
+        <img src="images/ceo-photo.jpg" alt="CEO Picture">
+    </div>
+    <div class="ceo-details">
+        <h1>Meet Our Hardworking CEO & DEVELOPER</h1>
+        <p class="ceo-name">Emmanuel Adjei Danso</p>
+        <p class="ceo-description">
+        Mr.Emmanuel is the visionary leader behind the Bank of Adjei Danso, bringing a wealth of experience, excellence and commitment
+        to the institution. With over a decade in the financial industry, Emmanuel has a proven track record of
+        driving innovation, fostering a culture of integrity, and prioritizing customer-centric solutions. He's also an experienced developer (HE CREATED THIS WEBSITE!)</p>
+    </div>
+    <button class="close-button">&times;</button>
+</div>
+
+
+    <script>
+         // Get the modal
+            var ceoModal = document.getElementById("ceo-modal");
+
+            // Get the button that opens the modal
+            var ceoBtn = document.querySelector(".meet-ceo a");
+
+            // Get the <span> element that closes the modal
+            var ceoClose = document.querySelector(".close-button");
+
+            // When the user clicks the button, open the modal 
+            ceoBtn.onclick = function (event) {
+                event.preventDefault();
+                ceoModal.classList.add("active");
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            ceoClose.onclick = function () {
+                ceoModal.classList.remove("active");
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == ceoModal) {
+                    ceoModal.classList.remove("active");
+                }
+            }
+    </script>
+
+
+   </body>
+
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In to Online Banking</title>
+    <link rel="stylesheet" href="css/signin.css">
+</head>
+
+<body>
+    <header class="fit">
+        <img src="images/logos2.png" alt="Bank Logo" class="logo">
+        <p class="org">&copy; Emmanuel Adjei Danso</p>
+    </header>
+
+    <main>
+        <section class="login-section">
+            <div class="login-header">
+            <h1>Log In to Our Online Banking</h1>
+            </div>
+            <div class="login-container">
+                <div class="login-form">
+                    <form action="/login" method="post" class="login-form">
+                        <label for="user-id">User ID</label>
+                        <input type="text" id="user-id" name="username" required>
+                        <div class="save-user-id">
+                            <input type="checkbox" id="save-user-id" name="save-user-id">
+                            <label for="save-user-id">Save this User ID</label>
+                        </div>
+                    
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                        <a href="#" class="forgot-password" id="forgot-password-link">Forgot your Password?</a>
+                    
+                        <button type="submit" class="login-button">Log In</button>
+                    </form>
+
+                </div>
+                    
+                <div class="vertical-line"></div>
+
+                <div class="login-image">
+                    <img src="images/price.png" alt="Bank App Image">
+                </div>
+
+                <div class="login-help">
+                    <h2>Login help</h2>
+                    <ul>
+                        <li><a href="#" id="forgot-id-password-link">Forgot ID/Password?</a></li>
+                        <li><a href="#">Problem logging in?</a></li>
+                    </ul>
+                    <h2>Not using Online Banking?</h2>
+                    <ul>
+                        <li><a href="signup.html">Enroll now</a></li>
+                        <li><a href="#">Learn more about Online Banking</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="secure-area">
+            <p>Secure area</p>
+            <ul>
+                <li><a href="privacy.html">| Privacy & Security </a></li>
+               
+            <li><a href="#" id="privacy-link">| Your Privacy Choices</a></li>
+
+            </ul>
+            <p>&copy; 2024 Bank of Adjei Danso Corporation. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- Forgot ID/Password Modal -->
+    <div id="forgot-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button-forgot">&times;</span>
+            <h2>Forgot User ID / Password</h2>
+            <p>Please provide some basic information and we’ll help with your User ID or Password.</p>
+            <form>
+                <label for="account-number">Card or Account Number (Last 6 digits)*</label>
+                <input type="text" id="account-number" name="account-number" required>
+                <br>
+                <label for="ssn-tin">Social Security Number (SSN)*</label>
+                <input type="text" id="ssn-tin" name="ssn-tin" required>
+                <div class="modal-actions">
+                    <button type="submit" class="continue-button">Continue</button>
+                    <button type="button" class="cancel-button">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Privacy Choices Modal -->
+    <div id="privacy-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button-privacy">&times;</span>
+            <h2>Your Privacy Choices</h2>
+            <p>This feature allows you to manage your privacy choices. By selecting a category, you can learn about your
+                choices and make changes. Selections you make will update your default settings. Where possible, we will
+                provide you with a single privacy profile and store settings across our brands. Occasionally there are legal
+                or technical limitations, where you have multiple user names or accounts, that may prevent this from
+                occurring. You should check your settings for accuracy based on your relationship with us.</p>
+    
+            <h3>Local Privacy Notices and Requirements</h3>
+            <p>The Privacy Choices displayed are specific to your local privacy requirements and our privacy notices. For
+                more information about how we protect your privacy, including specific rights that may apply, please visit
+                the <a href="#">Institutional Privacy</a> and the <a href="#">Consumer Privacy</a> pages.</p>
+    
+            <h3>Marketing Preferences</h3>
+            <p>To manage your general marketing preferences, please visit the “Control how we can share your data and market
+                to you” form on our <a href="privacy.html">Privacy Page</a>.</p>
+    
+           
+            <button class="modal-save-button" id="modal-save">Save Settings</button>
+        </div>
+    </div>
+
+
+            <script>
+                // Get the modal
+                var privacyModal = document.getElementById("privacy-modal");
+
+                // Get the button that opens the modal
+                // Get the button that opens the modal
+                var privacyLink = document.getElementById("privacy-link");
+
+                // Get the <span> element that closes the modal
+                var closeButtonPrivacy = document.getElementsByClassName("close-button-privacy")[0];
+
+                var privacySave= document.getElementById("modal-save");
+
+                var forgotModal = document.getElementById("forgot-modal");
+
+                                                    // Get the links that open the modal
+                var forgotPasswordLink = document.getElementById("forgot-password-link");
+                var forgotIDPasswordLink = document.getElementById("forgot-id-password-link");
+
+                                                    // Get the <span> element that closes the modal
+                var closeButtonForgot = document.getElementsByClassName("close-button-forgot")[0];
+
+                // When the user clicks the link, open the modal 
+                privacyLink.onclick = function (event) {
+                    event.preventDefault();
+                    privacyModal.style.display = "block";
+                }
+
+                // When the user clicks on <span> (x), close the modal
+                closeButtonPrivacy.onclick = function () {
+                    privacyModal.style.display = "none";
+                }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function (event) {
+                    if (event.target == privacyModal) {
+                        privacyModal.style.display = "none";
+                    }
+                }
+
+                 privacySave.onclick = function () {
+                        privacyModal.style.display = "none";
+                    }
+
+
+
+            
+                            // Get the modal
+
+
+                                // Open the modal when the links are clicked
+                forgotPasswordLink.onclick = function (event) {
+                                    event.preventDefault();
+                                    forgotModal.style.display = "block";
+                                };
+
+                forgotIDPasswordLink.onclick = function (event) {
+                                    event.preventDefault();
+                                    forgotModal.style.display = "block";
+                                };
+
+                                // Close the modal when the close button is clicked
+                closeButtonForgot.onclick = function () {
+                                    forgotModal.style.display = "none";
+                                };
+
+                                // Close the modal when the user clicks outside the modal
+                window.onclick = function (event) {
+                                    if (event.target == forgotModal) {
+                                        forgotModal.style.display = "none";
+                                    }
+                                };
+
+                                // Handle Cancel button click to close the modal
+                var cancelButton = document.querySelector(".cancel-button");
+                                cancelButton.onclick = function () {
+                                    forgotModal.style.display = "none";
+                                };
+            </script>
+
+</body>
+
+</html>

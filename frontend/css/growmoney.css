@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+
+}
+
+header {
+    position: fixed;
+    background-color: #fff;
+    text-align: left;
+    margin-top: 0rem;
+    padding: 1rem 0;
+    z-index: 2;
+    width: 100%;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+
+}
+
+.fit {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    max-width: 280px;
+    margin-left: 2rem;
+
+}
+
+.org {
+    text-align: right;
+    margin-right: 5rem;
+    font-size: large;
+    color: #002244;
+    font-weight: bold;
+
+
+}
+
+/* New Section Styles */
+.ira-promo {
+    background-color: #0074cc;
+    color: white;
+    padding: 3rem 2rem;
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.promo-content {
+    max-width: 50%;
+}
+
+.limited-time {
+    background-color: #01cdd3;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+}
+
+h1 .highlight {
+    color: #00b953;
+}
+p .highlight {
+    color: #01cdd3;
+}
+
+.promo-content p {
+    font-size: 1.1rem;
+    margin: 1.5rem 0;
+    line-height: 1.5;
+}
+
+.signup-button {
+    background-color: white;
+    color: #0074cc;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.signup-button:hover {
+    background-color: #e6e6e6;
+}
+
+.promo-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Grow Money Section Styles */
+.grow-money-section {
+    padding: 3rem 2rem;
+    margin: 2rem 7rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.grow-money-section h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.grow-money-section p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.grow-money-section ul {
+    list-style-type: disc;
+    margin-left: 2rem;
+}
+
+.grow-money-section li {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.grow-money-section h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
